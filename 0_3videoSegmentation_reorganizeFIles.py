@@ -1,3 +1,4 @@
+# organize the frame based on the correlation. adjacent frame representing the same scene is put in the same folder
 import os
 import shutil
 import time
