@@ -1,3 +1,4 @@
+# we need enough data in each scene to train the model, so if a scene is not long enough (don't have enough frames), it will not be included in the contrastive learning
 import os
 import shutil
 import time
