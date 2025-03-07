@@ -1,3 +1,4 @@
+# both same image and image close in time should have the same representation
 from __future__ import print_function
 
 import os
