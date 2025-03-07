@@ -1,7 +1,4 @@
-''' Summary
-To train AlexNet to fit Cadena's nerual data.
-'''
-
+# calculate the similarity between adjacent frames, representation extracted with AlexNet. Low correlation is assumed to represent a change in the movie content/scene
 import os
 import sys
 import random
@@ -103,37 +100,7 @@ def main(whichModel):
         print("... No checkpoint found at '{}'".format(load_path))
         print("train from start")
 
-        # with torch.no_grad():
-        #     model.features[0].weight.copy_(checkpoint['state_dict']['features.0.weight'])
-        #     model.features[0].bias.copy_(checkpoint['state_dict']['features.0.bias'])
-        # model.features[0].weight.requires_grad = False # this is for Alexnet_v3 freeze layer 1 weight as the original alexnet weight
-        # model.features[0].bias.requires_grad = False # this is for Alexnet_v3
-
-    #### Learning rate scheduler
-    # lr_scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[61], gamma=0.1, last_epoch=start_epoch-1)
-    # lr_scheduler.step()
-
-    #### Data loader ###################################################################################################
-    # 0, n01622779, Owl; 1, n02123045, Cat; 2, n02129165, Lion; 3, n02132136, Bear; 4, n02326432, Hare;
-    # 5, n02342885, Hamster; 6, n02410509, Bison; 7, n02504458, Elephant; 8, n02690373, Airliner;
-    # 9, n03594945, Jeep; 10, n04147183, Schooner; 11, n04273569, Speedboat; 12, n04285008, Sports car;
-    # 13, n04344873, Couch; 14, n04380533, Table lamp, 15, n04398044, Teapot
-    ####################################################################################################################
-
-    # train_dataset = torchvision.datasets.ImageFolder(
-    #     # "/home/tonglab/Documents/Data/ILSVRC2012/images/train_16",
-    #     "/home/tonglab/Datasets/imagenet"+str(1000)+'/train',
-    #     transforms.Compose([
-    #         transforms.RandomResizedCrop(224),
-    #         transforms.RandomHorizontalFlip(),
-    #         # transforms.Grayscale(),
-    #         transforms.ToTensor(),
-    #         # transforms.Normalize(mean=[0.449], std=[0.226])
-    #         # transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-    #     ]))
-    # train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=train_batch_size, shuffle=True, num_workers=4, pin_memory=True)
-
-    # val_dataset = torchvision.datasets.ImageFolder(
+        
     val_dataset = ImageFolderWithPaths(
         # "/home/tonglab/Documents/Data/ILSVRC2012/images/val_16",
         '/mnt/HDD12TB/Miao/Datasets/theLifeofMammals/E1783/VIDEO_TS/subSample30hz/',
