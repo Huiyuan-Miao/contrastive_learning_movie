@@ -1,3 +1,4 @@
+# test whether the model trained with contrastive learning learn a good representation from movie data - train the classifier to do imagenet classification
 from __future__ import print_function
 
 import os
