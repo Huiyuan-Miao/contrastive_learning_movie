@@ -1,3 +1,5 @@
+# test whether the model trained with contrastive learning learn a good representation from movie data - finetune the entire model to do imagenet classification, the loss is both contrastive learning loss and classification loss
+
 from __future__ import print_function
 
 import os
