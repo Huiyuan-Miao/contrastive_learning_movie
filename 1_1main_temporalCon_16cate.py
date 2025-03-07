@@ -1,3 +1,4 @@
+# contrastive learning, but images close in times are expected to have the same representation
 from __future__ import print_function
 import re
 import os
