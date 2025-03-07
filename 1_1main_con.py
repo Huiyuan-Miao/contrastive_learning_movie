@@ -1,4 +1,4 @@
-# original contrastive learning, crops from the same image should have the same representation
+# contrastive learning with simCLR, crops from the same image should have the same representation
 from __future__ import print_function
 
 import os
